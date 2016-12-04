@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "browser-sync": "~1.6.2",
+    "gulp": "~3.9.1"
+  },
+  "private": true,
+  "dependencies": {
+    "gulp-uglify": "^2.0.0"
+  }
+}
