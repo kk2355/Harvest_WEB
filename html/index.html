@@ -10,6 +10,11 @@
     <meta name="description" content="${description}" />
     <script src='https://cdnjs.cloudflare.com/ajax/libs/riot/3.0.1/riot+compiler.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js'></script>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
     
     <style>{style}</style>
   </head>
@@ -21,17 +26,20 @@
     <script type="riot/tag">
       <app>
         <!-- layout -->
-        <h1>{title}</h1>
+        <h1 class="white-text grey darken-4">{title}</h1>
         
-        <ul each='{rss}'>
-          {siteName}
+        <ul class="collection with-header" each='{rss}'>
+          <li class="collection-header teal lighten-3">{siteName}</li>
           <li each='{feedList}'>
-            <a href='{url}'> {title} </a>
+            <a href='{url}' class="collection-item" target="_blank"> {title} </a>
           </li>
         </ul>
 
         <!-- style -->
         <style>
+        h1 {
+          margin-top: 0%;
+        }
         ul {
           margin: 0;
           padding: 0;
