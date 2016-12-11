@@ -1,10 +1,11 @@
 {
   "devDependencies": {
-    "browser-sync": "~1.6.2",
-    "gulp": "~3.9.1"
+    "browser-sync": "^2.11.0",
+    "browserify": "^13.0.0",
+    "gulp": "~3.9.1",
+    "riot": "^2.3.13",
+    "riotify": "^0.1.2",
+    "vinyl-source-stream": "^1.1.0"
   },
-  "private": true,
-  "dependencies": {
-    "gulp-uglify": "^2.0.0"
-  }
+  "private": true
 }

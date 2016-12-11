@@ -1,15 +1,35 @@
 var gulp = require('gulp');
-var browserSync = require('browser-sync');
-var reload = browserSync.reload;
-var uglify = require('gulp-uglify'); // gulp-uglifyを読み込む
+var browsersync = require('browser-sync');
+var browserify = require('browserify');
+var riotify = require('riotify');
+var source = require('vinyl-source-stream');
+
+// コンパイル
+gulp.task('concat', function () {
+  return browserify({
+    debug: true,
+    entries: ['./src/main.js']
+  }).transform([riotify])
+    .bundle()
+    .pipe(source('main.bundle.js'))
+    .pipe(gulp.dest('./dest/'))
+    .pipe(browsersync.stream());
+});
 
 gulp.task('server', function () {
-  browserSync({
-    notify: false,
+  browsersync.init({
     server: {
-      baseDir: "html"
-    }
+      baseDir: 'dest'
+    },
+    open: false,
   });
+});
 
-  gulp.watch('html/**/*.html', reload);
+// 監視
+gulp.task('default', ['server'], function() {
+  gulp.watch("./dest/*", function() {
+    browsersync.reload();
+  });
+  gulp.watch("./src/**/*.js", ['concat']);
+  gulp.watch("./src/**/*.tag", ['concat']);
 });
