@@ -27,7 +27,7 @@
   <script>
     this.rss = [];
     this.title = opts.title;
-    $.get('http://localhost:3030/harvest').done(function(res) {
+    $.get('http://localhost:3333/harvest').done(function(res) {
       this.rss = res;
       this.update();
     }.bind(this));
