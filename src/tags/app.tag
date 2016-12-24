@@ -27,7 +27,7 @@
   <script>
     this.rss = [];
     this.title = opts.title;
-    $.get('http://localhost:3333/harvest').done(function(res) {
+    $.get('http://www14078uc.sakura.ne.jp:3333/harvest').done(function(res) {
       this.rss = res;
       this.update();
     }.bind(this));
