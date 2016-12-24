@@ -33,3 +33,15 @@ gulp.task('default', ['server'], function() {
   gulp.watch("./src/**/*.js", ['concat']);
   gulp.watch("./src/**/*.tag", ['concat']);
 });
+
+// エレクターズサーバ内で実行させるタスク
+gulp.task('compile', function () {
+  return browserify({
+    debug: true,
+    entries: ['./src/main.js']
+  }).transform([riotify])
+    .bundle()
+    .pipe(source('main.bundle.js'))
+    .pipe(gulp.dest('/var/www/html/harvest_dest/'))
+    .pipe(browsersync.stream());
+});
