@@ -1,6 +1,6 @@
 {
   "scripts": {
-  	"start": "gulp compile"
+    "start": "gulp compile"
   },
   "devDependencies": {
     "browser-sync": "^2.11.0",
