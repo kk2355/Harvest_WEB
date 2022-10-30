@@ -3,7 +3,7 @@
     "start": "gulp compile"
   },
   "devDependencies": {
-    "browser-sync": "^2.11.0",
+    "browser-sync": "^2.27.10",
     "browserify": "^13.0.0",
     "gulp": "~3.9.1",
     "riot": "^2.3.13",
